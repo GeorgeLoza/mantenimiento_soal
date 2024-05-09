@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('modelo')->nullable(); 
             $table->decimal('costo',10,2)->nullable();
             $table->string('fabricante')->nullable();
-            $table->string('estado');
+            $table->string('estado')->nullable();
             $table->string('criticidad')->nullable();
 
             $table->foreignId('tipo_maqs_id')->nullable()->constrained()->onDelete('restrict');

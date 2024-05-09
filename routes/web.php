@@ -53,10 +53,7 @@ Route::middleware(['auth', 'role:Admi'])->group(function () {
     Route::get('/Repuesto/Solicitud', [RepuestoSolicitudController::class, 'index'])->name('rep_sol.index');
 });
 
-// Rutas accesibles para técnico, administrador y almacén
-Route::middleware(['auth', 'role:tecnico,Admi,almacen'])->group(function () {
-    Route::get('/misots', [MisOtsController::class, 'index'])->name('misots.index');
-});
+
 
 // Rutas accesibles para solicitante y administrador
 Route::middleware(['auth', 'role:solicitante,Admi'])->group(function () {
@@ -69,4 +66,9 @@ Route::middleware(['auth', 'role:almacen,Admi'])->group(function () {
     Route::get('/compras', [CompraController::class, 'index'])->name('compras.index');
     Route::get('/Repuesto/Orden', [RepuestoOrdenController::class, 'index'])->name('rep_orden.index');
     Route::get('/repuestos', [RepuestoController::class, 'index'])->name('repuestos.index');
+});
+
+// Rutas accesibles para técnico, administrador y almacén
+Route::middleware(['auth', 'role:tecnico,Admi,almacen'])->group(function () {
+    Route::get('/misots', [MisOtsController::class, 'index'])->name('misots.index');
 });

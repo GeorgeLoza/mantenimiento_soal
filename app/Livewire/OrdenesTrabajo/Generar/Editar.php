@@ -84,7 +84,6 @@ class Editar extends ModalComponent
         $this->validate([
             'ubicacion_id' => 'required',
             'descripcion' => 'required',
-            'tipo_ordens_id' => 'required',
             'prioridad_id' => 'required',
             'user_id' => 'required',
         ]);
@@ -94,7 +93,7 @@ class Editar extends ModalComponent
             $orden = Orden::find($this->id);
             $orden->user_id = $this->user_id;
             $orden->prioridad_id = $this->prioridad_id;
-            $orden->tipo_ordens_id = $this->tipo_ordens_id;
+            $orden->tipo_ordens_id = 1;
             $orden->estado_ots_id = 1;
             $orden->notasTec = $this->notasTec;
             if ($orden->numero_orden == NULL) {

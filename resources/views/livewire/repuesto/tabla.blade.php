@@ -123,5 +123,9 @@
             </table>
         </div>
     </div>
-
+    @if (!$aplicandoFiltros)
+    <div>
+        {{ $repuestos->links('pagination::tailwind') }}
+    </div>
+    @endif
 </div>

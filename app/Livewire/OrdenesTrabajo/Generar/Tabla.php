@@ -86,7 +86,7 @@ class Tabla extends Component
                 $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : "desc");
             });
         // Decide si usar paginación o mostrar todos los resultados
-        $ordenes = $this->aplicandoFiltros ? $query->get() : $query->paginate(50);
+        $ordenes = $this->aplicandoFiltros ? $query->get() : $query->paginate(3);
         return view('livewire.ordenes-trabajo.generar.tabla', [
             'ordenes' => $ordenes
         ]);

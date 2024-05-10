@@ -11,8 +11,7 @@
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/flowbite.js')}}"></script>
     
-
-    
+    @vite('resources/css/app.css')
 
 </head>
 

@@ -159,4 +159,10 @@
 
         </table>
     </div>
+    @if (!$aplicandoFiltros)
+    <div>
+        {{ $solicitudes->links('pagination::tailwind') }}
+    </div>
+    @endif
+
 </div>

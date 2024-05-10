@@ -2,7 +2,7 @@
     <div class="flex flex-col md:flex-row justify-between items-center">
         <div>
             <h2 class="text-xl md:text-2xl lg:text-3xl mb-4 text-gray-800 dark:text-gray-200 font-bold">LLENAR OT</h2>
-            
+
         </div>
 
         <p class="text-xl md:text-2xl lg:text-3xl">
@@ -99,41 +99,40 @@
                         </thead>
                         <tbody>
                             @foreach ($tiempos as $tiempo)
-                                <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="row"
-                                        class="px-1 py-2 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                                        {{ $loop->iteration }}
-                                    </th>
-                                    <td class="px-1 py-2 text-xs">
-                                        {{ $tiempo->tiempo_inicio }}
-                                    </td>
-                                    <td class="px-1 py-2 text-xs">
-                                        {{ $tiempo->tiempo_fin }}
-                                    </td>
-                                    <td class="px-1 py-2 text-xs">
-                                        {{-- mostrar sumatoria --}}
-                                        @php
-                                            $inicio = Carbon\Carbon::parse($tiempo->tiempo_inicio);
-                                            $fin = Carbon\Carbon::parse($tiempo->tiempo_fin);
-                                            $diferencia = $inicio->diff($fin); // Obtiene un objeto DateInterval
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <th scope="row"
+                                    class="px-1 py-2 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                    {{ $loop->iteration }}
+                                </th>
+                                <td class="px-1 py-2 text-xs">
+                                    {{ $tiempo->tiempo_inicio }}
+                                </td>
+                                <td class="px-1 py-2 text-xs">
+                                    {{ $tiempo->tiempo_fin }}
+                                </td>
+                                <td class="px-1 py-2 text-xs">
+                                    {{-- mostrar sumatoria --}}
+                                    @php
+                                    $inicio = Carbon\Carbon::parse($tiempo->tiempo_inicio);
+                                    $fin = Carbon\Carbon::parse($tiempo->tiempo_fin);
+                                    $diferencia = $inicio->diff($fin); // Obtiene un objeto DateInterval
 
-                                            // Calcula la duración total en horas y minutos
-                                            $horas = $diferencia->h;
-                                            $minutos = $diferencia->i;
-                                            $totalHoras = $horas + $minutos / 60;
-                                        @endphp
-                                        {{ sprintf('%.2f', $totalHoras) }} horas
+                                    // Calcula la duración total en horas y minutos
+                                    $horas = $diferencia->h;
+                                    $minutos = $diferencia->i;
+                                    $totalHoras = $horas + $minutos / 60;
+                                    @endphp
+                                    {{ sprintf('%.2f', $totalHoras) }} horas
 
-                                    </td>
-                                    <td class="px-1 py-2 text-xs">
-                                        <svg wire:click="deleteHour({{ $tiempo->id }})"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="h-4 w-4 fill-red-600 dark:fill-red-500" viewBox="0 0 448 512">
-                                            <path
-                                                d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
-                                        </svg>
-                                    </td>
-                                </tr>
+                                </td>
+                                <td class="px-1 py-2 text-xs">
+                                    <svg wire:click="deleteHour({{ $tiempo->id }})" xmlns="http://www.w3.org/2000/svg"
+                                        class="h-4 w-4 fill-red-600 dark:fill-red-500" viewBox="0 0 448 512">
+                                        <path
+                                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                                    </svg>
+                                </td>
+                            </tr>
                             @endforeach
 
                         </tbody>
@@ -159,7 +158,7 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="">Seleccione un repuesto</option>
                     @foreach ($repuestos as $repuesto)
-                        <option value="{{ $repuesto->id }}">{{ $repuesto->nombre }}</option>
+                    <option value="{{ $repuesto->id }}">{{ $repuesto->nombre }}</option>
                     @endforeach
 
                 </select>
@@ -201,45 +200,55 @@
                     </thead>
                     <tbody>
                         @foreach ($repuestosSolicitud as $repuesto)
-                            <tr class="border-b border-gray-200 dark:border-gray-700">
-                                <th scope="row"
-                                    class="px-1 py-2 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                                    {{ $repuesto->repuestos->nombre }}
+                        <tr class="border-b border-gray-200 dark:border-gray-700">
+                            <th scope="row"
+                                class="px-1 py-2 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                {{ $repuesto->repuestos->nombre }}
+                            </th>
+                            <td class="px-1 py-2 text-xs">
+                                {{ $repuesto->cantidad }}
+                            </td>
+
+                            <td scope="row" class="px-1 py-2 text-xs" nowrap>
+
+                                @if ($repuesto->estado == 'Pendiente')
+                                <span class="flex items-center text-sm font-medium me-3"><span
+                                        class="flex w-2.5 h-2.5 bg-yellow-500 rounded-full me-1.5 flex-shrink-0"></span>{{
+                                    $repuesto->estado }}</span>
+                                @endif
+                                @if ($repuesto->estado == 'Aprobado')
+                                <span class="flex items-center text-sm font-medium me-3"><span
+                                        class="flex w-2.5 h-2.5 bg-green-500 rounded-full me-1.5 flex-shrink-0"></span>{{
+                                    $repuesto->estado }}</span>
+                                @endif
+                                @if ($repuesto->estado == 'Rechazado')
+                                <span class="flex items-center text-sm font-medium me-3"><span
+                                        class="flex w-2.5 h-2.5 bg-red-500 rounded-full me-1.5 flex-shrink-0"></span>{{
+                                    $repuesto->estado }}</span>
+                                @endif
+                                @if ($repuesto->estado == 'Repuesto pendiente')
+                                <span class="flex items-center text-sm font-medium me-3"><span
+                                        class="flex w-2.5 h-2.5 bg-gray-500 rounded-full me-1.5 flex-shrink-0"></span>{{
+                                    $repuesto->estado }}</span>
+                                @endif
+                                @if ($repuesto->estado == 'Entregado')
+                                <span class="flex items-center text-sm font-medium me-3"><span
+                                        class="flex w-2.5 h-2.5 bg-gray-500 rounded-full me-1.5 flex-shrink-0"></span>{{
+                                    $repuesto->estado }}</span>
+                                @endif
                                 </th>
-                                <td class="px-1 py-2 text-xs">
-                                    {{ $repuesto->cantidad }}
-                                </td>
 
-                                <td scope="row" class="px-1 py-2 text-xs" nowrap>
+                                @if ($repuesto->estado == 'Pendiente')
+                            <td class="px-1 py-2 text-xs">
+                                <svg wire:click="deleteRepuesto({{ $repuesto->id }})" xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 fill-red-600 dark:fill-red-500" viewBox="0 0 448 512">
+                                    <path
+                                        d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                                </svg>
+                            </td>
+                            @endif
 
-                                    @if ($repuesto->estado == 'Pendiente')
-                                        <span class="flex items-center text-sm font-medium me-3"><span
-                                                class="flex w-2.5 h-2.5 bg-yellow-500 rounded-full me-1.5 flex-shrink-0"></span>{{ $repuesto->estado }}</span>
-                                    @endif
-                                    @if ($repuesto->estado == 'Aprobado')
-                                        <span class="flex items-center text-sm font-medium me-3"><span
-                                                class="flex w-2.5 h-2.5 bg-green-500 rounded-full me-1.5 flex-shrink-0"></span>{{ $repuesto->estado }}</span>
-                                    @endif
-                                    @if ($repuesto->estado == 'Rechazado')
-                                        <span class="flex items-center text-sm font-medium me-3"><span
-                                                class="flex w-2.5 h-2.5 bg-red-500 rounded-full me-1.5 flex-shrink-0"></span>{{ $repuesto->estado }}</span>
-                                    @endif
-                                    @if ($repuesto->estado == 'Repuesto pendiente')
-                                        <span class="flex items-center text-sm font-medium me-3"><span
-                                                class="flex w-2.5 h-2.5 bg-gray-500 rounded-full me-1.5 flex-shrink-0"></span>{{ $repuesto->estado }}</span>
-                                    @endif
-                                    </th>
-
-
-                                <td class="px-1 py-2 text-xs">
-                                    <svg wire:click="deleteRepuesto({{ $repuesto->id }})"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="h-4 w-4 fill-red-600 dark:fill-red-500" viewBox="0 0 448 512">
-                                        <path
-                                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
-                                    </svg>
-                                </td>
-                            </tr>
+                        </tr>
                         @endforeach
 
                     </tbody>

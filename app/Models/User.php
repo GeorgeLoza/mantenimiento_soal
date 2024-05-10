@@ -28,7 +28,7 @@ class User extends Authenticatable
         'codigo',
         'password',
         'tipo_oficios_id',
-        'planta_id',
+        'plantas_id',
     ];
 
     public function solicitud()
@@ -46,10 +46,11 @@ class User extends Authenticatable
     return $this->belongsTo(TipoOficio::class, 'tipo_oficios_id');
 }
 
-    public function planta()
-    {
-        return $this->belongsTo(Planta::class);
-    }
+public function planta()
+{
+    return $this->belongsTo(Planta::class, 'plantas_id');
+}
+
 
     public function orden()
     {

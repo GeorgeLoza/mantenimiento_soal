@@ -8,13 +8,14 @@ use Livewire\Component;
 class Tabla extends Component
 {
 
+    
     public $f_nombre=null;
     public $f_descripcion=null;
     public $f_estado=null;
     public $f_stockact=null;
     public $f_stockmin=null;
 
-    
+    public $aplicandoFiltros = false;
     //filtros-ordenamiento
     public $sortField;
     public $sortAsc = true;

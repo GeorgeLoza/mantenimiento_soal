@@ -69,7 +69,7 @@ class Tabla extends Component
                 $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : "desc");
             });
         // Decide si usar paginación o mostrar todos los resultados
-        $movimientos = $this->aplicandoFiltros ? $query->get() : $query->paginate(20);
+        $movimientos = $this->aplicandoFiltros ? $query->get() : $query->paginate(5);
         return view('livewire.rep-ordenes.tabla',[
             'movimientos' => $movimientos
         ]);

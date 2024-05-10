@@ -1,5 +1,5 @@
 <div>
-        <div
+        <div wire:poll.180s
             class="w-full  p-4 bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
                 <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Tecnicos</h5>

@@ -62,13 +62,9 @@
                                 <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"> <button
                                         data-popover-target="popover-description" data-popover-placement="bottom-end"
                                         type="button">
-                                        <svg class="w-6 h-6 ms-2 text-yellow-400 hover:text-yellow-500"
-                                            aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                                clip-rule="evenodd"></path>
-                                        </svg><span class="sr-only">Show information</span></button></p>
+                                        
+                                        <svg class="w-6 h-6 ms-2 fill-yellow-400 hover:fill-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+                                        <span class="sr-only">Show information</span></button></p>
 
                                 <div data-popover id="popover-description" role="tooltip"
                                     class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">

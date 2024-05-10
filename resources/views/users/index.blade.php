@@ -10,19 +10,19 @@
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-1">
                         Nombre y apellido
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-1">
                         Codigo
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-1">
                         Cargo
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-1">
                         Departamento
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-1">
                         Action
                     </th>
                 </tr>
@@ -47,7 +47,7 @@
                         <td class="px-6 py-1 flex mt-1 gap-1">
                             <a href="{{ route('user.edit', $usuario->id) }}">
                                 <button
-                                    class="text-white bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    class="text-white bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                                         class="fill-white dark:fill-white">
                                         <path

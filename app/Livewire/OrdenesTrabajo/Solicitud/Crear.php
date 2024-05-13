@@ -33,12 +33,16 @@ class Crear extends ModalComponent
     {
         // Obtenemos la planta del usuario actual
         $plantaUsuario = auth()->user()->plantas_id;
+        if ($plantaUsuario == null) {
+            $this->ubicaciones = Ubicacion::all();
+        }
         if ($plantaUsuario == 1) {
             $this->ubicaciones = Ubicacion::where('planta', 'LACTEOS')->get();
         }
         if ($plantaUsuario == 2) {
             $this->ubicaciones = Ubicacion::where('planta', 'SOYA')->get();
         }
+        
     }
 
 

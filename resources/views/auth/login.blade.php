@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Mantenimiento - @yield('titulo')</title>
-    <link rel="stylesheet" href="{{ asset('build/assets/app-94961e60.css') }}">
-    <script src="{{ asset('build/assets/app-c0a83405.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('build/assets/app-Bd2putNZ.css') }}">
+    <script src="{{ asset('build/assets/app-BfDixnIz.js') }}" defer></script>
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/flowbite.js')}}"></script>
     

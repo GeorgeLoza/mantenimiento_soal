@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Mantenimiento - @yield('titulo')</title>
-    <link rel="stylesheet" href="{{ asset('build/assets/app-94961e60.css') }}">
-    <script src="{{ asset('build/assets/app-c0a83405.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('build/assets/app-Bd2putNZ.css') }}">
+    <script src="{{ asset('build/assets/app-BfDixnIz.js') }}" defer></script>
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/flowbite.js')}}"></script>
     
@@ -32,7 +32,7 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
+                    <a  class="flex ml-2 md:mr-24">
                         <img src="{{ asset('img/logo-icon.png') }}" class="h-8 mr-3" alt="FlowBite Logo" />
                         <span
                             class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Mantenimiento</span>
@@ -96,7 +96,6 @@
                                                 <p>Sign out</p>
                                             </button>
                                         </form>
-
                                     </li>
                                 </ul>
                             </div>
@@ -122,7 +121,7 @@
             <ul class="space-y-2 font-medium">
 
                 <li>
-                    <a href="#"
+                    <a href="{{ route('index') }}"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="w-5 h-5 text-blue-600 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"

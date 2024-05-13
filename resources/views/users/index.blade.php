@@ -32,19 +32,19 @@
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text">
                             {{ $usuario->nombre }} {{ $usuario->apellido }}
                         </th>
-                        <td class="px-6 py-4">
+                        <td class="px-6 py-1">
                             {{ $usuario->codigo }}
                         </td>
-                        <td class="px-6 py-4">
+                        <td class="px-6 py-1">
                             {{ $usuario->cargo }}
                         </td>
-                        <td class="px-6 py-4">
+                        <td class="px-6 py-1">
                             {{ $usuario->departamento }}
                         </td>
-                        <td class="px-6 py-1 flex mt-1 gap-1">
+                        <td class="px-6 py-1 flex gap-1">
                             <a href="{{ route('user.edit', $usuario->id) }}">
                                 <button
                                     class="text-white bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
